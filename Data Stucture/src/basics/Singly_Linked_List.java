@@ -9,7 +9,8 @@ public class Singly_Linked_List {
 		o1.insert(new Listnode(3));
 		o1.insert(new Listnode(4));
 		o1.insert(new Listnode(5));
-		o1.insert_position(new Listnode(10), 2);
+		o1.insert_position(new Listnode(10), 7);
+		o1.remove(2);
 		o1.display();
 
 	}
@@ -36,20 +37,32 @@ class Listnode{
 		if(head==null)
 			head=node;
 		else {
-			Listnode p,q = null;
+			Listnode p;
 			int i;
-			for(p=head,i=1;p.next!= null &&i<position-1 ;p=p.next,i++);
-			q=p.next;
+			for(p=head,i=1;p.next!= null &&i<position ;p=p.next,i++);
+			node.next=p.next;
 			p.next=node;
-			node.next=q;
 		}
 	}
+	
 	public synchronized void display() {
 		Listnode p;
 		for(p=head;p.next!= null;p=p.next) {
 			System.out.println("Value : "+p.data);
 		}
 		System.out.println("Value : "+p.data);
+	}
+	public synchronized void remove(int value) {
+		Listnode p;
+		if(head.data==value) 
+			head=head.next;
+		else {
+		for(p=head;p.next!=null ;p=p.next) {
+			 if((p.next.data)==value)
+				 p.next=p.next.next;
+		}
+		
+		}	
 	}
 }
 
