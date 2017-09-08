@@ -17,8 +17,8 @@ class Double_node{
 	int data;
 	Double_node prev;
 	Double_node next;
-	public Double_node(int data){
-		data=this.data;
+	public Double_node(){
+		
 		this.prev=null;
 		this.next=null;
 	}
@@ -33,30 +33,32 @@ class Double_list{
 		length=0;
 		
 	}
-	public synchronized void insert(int value) {
-			Double_node p = new Double_node(value);
-			for()
-			p.next=head.next;
-			head.next=p;
-			p.prev=head;
-			p.next.prev=p;	
-			length++;
+	private boolean isEmpty() {
+		return (head.next==tail)
 	}
-	public synchronized void insert(int value,int position) {
-		Double_node p = new Double_node(value),q;
-		if(position<0)
-			position=0;
-		else
-		if(position>length) 
-			position=length;
-		else {
-			for(q=head;position!=0;q=q.next,position--);
-			p.next=q.next;
-			q.next=p;
-			p.prev=q;
-			p.next.prev=p;	
-			length++;	
+	public void insertAtFirst(int value) {
+			Double_node newnode = new Double_node();
+			newnode.data=value;
+			if(isEmpty()) {
+				tail.prev=newnode;
+			}
+			newnode.next=head;
+			head=newnode;
+			
+	}
+	
+	
+	public void insertAtLast(int value) {
+		Double_node newnode = new Double_node();
+		newnode.data = value;
+		if(isEmpty()) {
+			
 		}
+		newnode.next=tail;
+		tail=newnode;
+		newnode.prev=tail.prev;
+		tail.prev=newnode;
+		newnode.prev.next=newnode;
 		
 			
 	}
