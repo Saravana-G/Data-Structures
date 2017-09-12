@@ -49,8 +49,9 @@ class BinaryTree{
 	}
 	public void traverseInOrder(BinaryTreeNode root) {
 		if(root!=null) {
-			System.out.println(root.data);
+
 			traverseInOrder(root.left);
+			System.out.println(root.data);
 			traverseInOrder(root.right);
 			
 		}
@@ -60,8 +61,8 @@ class BinaryTree{
 	}
 	public void traversePreOrder(BinaryTreeNode root) {
 		if(root!=null) {
-			traversePreOrder(root.left);
 			System.out.println(root.data);
+			traversePreOrder(root.left);
 			traversePreOrder(root.right);
 			
 		}
@@ -145,10 +146,5 @@ class BinaryTree{
 		}
 		else
 			return null;
-
-
-			
-			
-	
 	}
 }

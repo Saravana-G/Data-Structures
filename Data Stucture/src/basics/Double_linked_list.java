@@ -6,7 +6,7 @@ public class Double_linked_list {
 
 	public static void main(String[] args) {
 		Double_list o = new Double_list();
-		o.insert(2);
+		//o.insert(2);
 		o.display();
 
 	}
@@ -25,7 +25,7 @@ class Double_node{
 }
 
 class Double_list{
-	Double_node head = new Double_node(Integer.MIN_VALUE),tail = new Double_node(Integer.MIN_VALUE);
+	Double_node head = new Double_node(),tail = new Double_node();
 	int length;
 	public Double_list() {
 		head.next=tail;
@@ -34,7 +34,7 @@ class Double_list{
 		
 	}
 	private boolean isEmpty() {
-		return (head.next==tail)
+		return (head.next==tail);
 	}
 	public void insertAtFirst(int value) {
 			Double_node newnode = new Double_node();

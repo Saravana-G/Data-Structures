@@ -1,6 +1,5 @@
 package ds_binarytree;
 
-
 public class App {
 
 	public static void main(String[] args){

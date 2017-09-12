@@ -21,6 +21,10 @@ public class summa1 {
 				c[0]=2;
 		
 	}
+	
+	private static int[] blabla(int a[]) {
+		return new int []{a[0],a[1]};
+	}
 
 }
 
